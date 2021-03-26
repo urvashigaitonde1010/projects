@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Esign Management Application</title>
+  <!-- <link rel = "icon" href =  "./e-clipart-8.png" type = "image/x-icon">  -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="/js/lib/dummy.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script type="text/javascript"
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+  <style id="compiled-css" type="text/css">
+    :root {
+      --input-padding-x: 1.5rem;
+      --input-padding-y: 0.75rem;
+    }
+
+    .login,
+    .image {
+      min-height: 100vh;
+    }
+
+    .bg-image {
+      background-image: url('https://i.pinimg.com/474x/af/ea/1b/afea1bb61ade4fdf87c7d63cfc0ff325.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container-fluid {
+
+      text-align: center;
+
+
+    }
+
+
+
+    .login-heading {
+      font-weight: 300;
+      text-align: center;
+    }
+
+    .btn-login {
+      font-size: 0.9rem;
+      letter-spacing: 0.05rem;
+      padding: 0.75rem 1rem;
+      border-radius: 3rem;
+    }
+
+    .form-label-group {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+
+
+
+
+    .form-label-group>input,
+    .form-label-group>label {
+      padding: var(--input-padding-y) var(--input-padding-x);
+      height: auto;
+      border-radius: 2rem;
+    }
+
+    .form-label-group>label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      margin-bottom: 0;
+      /* Override default `<label>` margin */
+      line-height: 1.5;
+      color: #495057;
+      cursor: text;
+      /* Match the input under the label */
+      border: 1px solid transparent;
+      border-radius: .25rem;
+      transition: all .1s ease-in-out;
+    }
+
+    .form-label-group input::-webkit-input-placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input:-ms-input-placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input::-ms-input-placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input::-moz-placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input::placeholder {
+      color: transparent;
+    }
+
+    .form-label-group input:not(:placeholder-shown) {
+      padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+      padding-bottom: calc(var(--input-padding-y) / 3);
+    }
+
+    .form-label-group input:not(:placeholder-shown)~label {
+      padding-top: calc(var(--input-padding-y) / 3);
+      padding-bottom: calc(var(--input-padding-y) / 3);
+      font-size: 12px;
+      color: #777;
+    }
+
+
+    .form-control2 {
+      display: block;
+      width: 50%;
+      height: calc(1.5em + .75rem + 2px);
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    .tablink {
+      background-color: #555;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 17px;
+
+      width: 25%;
+      margin-left: 112px
+    }
+
+    .tablink:hover {
+      background-color: #777;
+    }
+
+    .tabcontent {
+      display: block;
+      padding: 100px 20px;
+      height: 100%;
+    }
+
+
+    /* Fallback for Edge
+-------------------------------------------------- */
+
+    @supports (-ms-ime-align: auto) {
+      .form-label-group>label {
+        display: none;
+      }
+
+      .form-label-group input::-ms-input-placeholder {
+        color: #777;
+      }
+    }
+
+    /* Fallback for IE
+-------------------------------------------------- */
+
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
+      .form-label-group>label {
+        display: none;
+      }
+
+      .form-label-group input:-ms-input-placeholder {
+        color: #777;
+      }
+    }
+
+    /* EOS */
+
+    .hide_b {
+      visibility: hidden;
+    }
+
+    #canvas-display {
+      border: solid 2px #000000;
+      cursor: crosshair;
+
+      padding: 5px;
+      display: block;
+    }
+  </style>
+
+
+
+  <script src="../js/jquery.min.js"></script>
+
+  <script src="http://code.jquery.com/jquery-1.6.2.js"></script>
+
+
+
+
+
+</head>
+
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <div class="col-md-1">
+    <a class="navbar-brand" href="D_Home_Page.html">
+      <img src="calperslogo.jpg" alt="logo" style="width:15vh;height:5h;">
+    </a>
+  </div>
+  <div class="col-md-9 ml-4">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link active" href="D_Home_Page.html"><i class="fas fa-home" style='font-size:22px'></i>Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="D_getdetails.html"><i class="fas fa-id-card" style='font-size:22px'></i>
+          Account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="D_My_Signatures.html"><i class="fas fa-file-signature"
+            style='font-size:22px'></i> My Signatures</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link active" href="D_Upload_Signature.html"><i class="fas fa-file-signature"
+            style='font-size:22px'></i> Upload Signature</a>
+      </li>
+
+    </ul>
+  </div>
+  <!-- <div class="col-md-8">
+                </div> -->
+  <div class="col-md-2 d-flex flex-row-reverse pr-4">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" onclick="logout()" class="nav-link active"><i class='fas fa-power-off' style='font-size:22px'></i>
+          Log Out</a></li>
+
+
+    </ul>
+  </div>
+
+</nav>
+<script>
+  function logout() {
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("email");
+    location.replace("./D_Sign_In.html")
+  }
+
+</script>
+
+<body>
+  <div class="container-fluid" id="body">
+
+    <div class="container">
+      <div class="row " style="min-height: 100%;min-height: 90vh;display: flex;align-items: center;">
+        <div class="col-lg-5 mx-auto">
+          <h2 class="login-heading mb-4">Draw Signature</h2>
+          <div>
+            <canvas id="canvas-display" width="420" height="200"></canvas>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <button id="undo" disabled="disabled"
+                class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Undo</button>
+            </div>
+            <div class="col-md-6">
+              <button id="clear" type="button"
+                class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Reset</button>
+            </div>
+          </div>
+          <script type="text/javascript">
+            $(document).ready(function () {
+              $('#canvas-display').paintBrush();
+
+            });
+          </script>
+
+
+          <br>
+          <div id="hide2">
+            <div class="form-label-group">
+              <input type="text" id="pref_txt" class="form-control" placeholder="Preferred name" >
+              <label for="pref_txt">Enter Preferred Name</label>
+              <span id="PrefError" runat="server" style="display:none;color:red"></span>
+            </div>
+          </div>
+          <br>
+          <div id="hide3" class="hide_b">
+            <input type="button" id="upload_img"
+              class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" value="Upload"
+              onclick="upload_val()" />
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" id="uploaded" data-target="#uploadedsuccess"
+    style="display:none"></button>
+  <div class="modal fade" id="uploadedsuccess" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+
+
+        <p id="showredmsg" style="text-align:center;margin-top:45px;margin-bottom:25px;"> &nbsp &nbsb
+
+
+
+        </p>
+        <br>
+        <br>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+<script>
+  window.onload = function () {
+    $.ajax({
+      type: "POST",
+      url: "http://127.0.0.1:8000/get_default_preffered_name/",
+      data: "{\"email\":\"" + localStorage.getItem("email") + "\"}",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success: function (response) {
+        console.log(response)
+        document.getElementById("pref_txt").setAttribute("value",response);
+        
+        // document.getElementById(response).className = "btn btn-success";
+        // // document.getElementById(recent_id).className = "btn btn-primary"
+        // document.getElementById("radio" + response).checked = true;
+        // recent_id = response;
+      },
+      failure: function (response) {
+        alert("failure");
+
+      },
+      error: function (response) {
+
+        alert(response.d);
+      }
+    });
+  }
+  function enableButton4() {
+    document.getElementById("hide3").style.visibility = "visible";
+  }
+
+  function disaibleButton4() {
+    document.getElementById("hide3").style.visibility = "hidden";
+  }
+
+  function validate1() {
+
+    var valid = true;
+
+    var fn = $('#pref_txt').val();
+
+
+    if (fn == "") {
+      $('#PrefError').css("display", "block");
+      document.getElementById('PrefError').innerHTML = "Preferred Name is required";
+      valid = false;
+    }
+
+    else {
+      $('#PrefError').css("display", "none");
+    }
+    return valid;
+  }
+
+  function upload_val() {
+    var valid = validate1();
+    if (valid == true) {
+      var obj = {
+
+
+        "Pref_name": $('#pref_txt').val(),
+
+      };
+
+      upload();
+
+    }
+  }
+
+  function upload() {
+    var data = $("#canvas-display")[0].toDataURL();
+    // console.log(data);
+    var obj = {
+      "user_id": localStorage.getItem("user_id"),
+      "image": data,
+      "preffered_name": $("#pref_txt").val()
+    };
+
+
+    var jsonobject = JSON.stringify(obj);
+    // console.log(jsonobject);
+    console.log(data);
+    $.ajax({
+
+      type: "POST",
+      url: "http://127.0.0.1:8000/upload/",
+      // data: "{'obj':'" + jsonobject + "'}",
+      data: jsonobject,
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      success: function (response) {
+        console.log(response);
+
+        if (response == "Image uploaded.") {
+          $('#uploaded').trigger('click');
+          document.getElementById('showredmsg').innerHTML = "Uploaded Successfully.";
+          // alert("Image is uploaded successfully.")
+          setTimeout(function () {
+            location.replace("./D_Home_Page.html");
+          }, 2000);
+          // alert("Image is uploaded successfully.")
+          //location.replace("./Upload_crop_page_JC.html")
+        }
+      },
+      failure: function (response) {
+        alert("failure");
+      },
+      error: function (response) {
+        alert("error");
+      }
+    });
+  }
+
+
+
+
+  (function ($) {
+    $.fn.paintBrush = function (options) {
+      var undoHistory = [];
+      var settings = {
+        'targetID': 'canvas-display'
+      },
+
+        $this = $(this),
+        o = {},
+        ui = {},
+
+        core = {
+          init: function (options) {
+            ui.$loadParentDiv = o.targetID;
+            core.draw();
+            core.controls();
+            //core.toggleScripts();
+          },
+
+
+
+          canvasInit: function () {
+            context = document.getElementById("canvas-display").getContext("2d");
+            context.lineCap = "round";
+            //Fill it with white background
+            context.save();
+            context.fillStyle = '#fff';
+            context.fillRect(0, 0, context.canvas.width, context.canvas.height);
+            context.restore();
+          },
+
+          saveActions: function () {
+            var imgData = document.getElementById("canvas-display").toDataURL("image/png");
+            undoHistory.push(imgData);
+            $('#undo').removeAttr('disabled');
+
+          },
+
+          undoDraw: function () {
+            if (undoHistory.length > 0) {
+              var undoImg = new Image();
+              $(undoImg).load(function () {
+                var context = document.getElementById("canvas-display").getContext("2d");
+                context.drawImage(undoImg, 0, 0);
+              });
+              undoImg.src = undoHistory.pop();
+              if (undoHistory.length == 0) {
+                $('#undo').attr('disabled', 'disabled');
+                disaibleButton4();
+              }
+            }
+          },
+
+
+
+
+
+          draw: function () {
+            var canvas, cntxt, top, left, draw, draw = 0;
+            canvas = document.getElementById("canvas-display");
+            cntxt = canvas.getContext("2d");
+            top = $('#canvas-display').offset().top;
+            left = $('#canvas-display').offset().left;
+            core.canvasInit();
+
+
+
+            //Drawing Code
+            $('#canvas-display').mousedown(function (e) {
+              if (e.button == 0) {
+                draw = 1;
+                core.saveActions(); //Start The drawing flow. Save the state
+                enableButton4();
+                cntxt.beginPath();
+                cntxt.moveTo(e.pageX - left, e.pageY - top);
+              }
+
+              else {
+                draw = 0;
+
+              }
+            })
+
+
+
+              .mouseup(function (e) {
+                if (e.button != 0) {
+                  draw = 1;
+                } else {
+                  draw = 0;
+                  cntxt.lineTo(e.pageX - left + 1, e.pageY - top + 1);
+                  cntxt.stroke();
+                  cntxt.closePath();
+                }
+              })
+              .mousemove(function (e) {
+                if (draw == 1) {
+                  cntxt.lineTo(e.pageX - left + 1, e.pageY - top + 1);
+                  cntxt.stroke();
+                }
+              });
+
+          },
+
+          controls: function () {
+            canvas = document.getElementById("canvas-display");
+            cntxt = canvas.getContext("2d");
+            // $('#export').click(function (e) {
+            //     e.preventDefault();
+            //     window.open(canvas.toDataURL(), 'Canvas Export', 'height=400,width=400');
+            // });
+
+            $('#clear').live("click", function (e) {
+              e.preventDefault();
+              canvas.width = canvas.width;
+              canvas.height = canvas.height;
+              core.canvasInit();
+              $('#colors li:first').click();
+              $('#brush_size').change();
+              //core.toggleScripts();
+              undoHistory = [];
+              disaibleButton4();
+            });
+
+            $('#brush_size').change(function (e) {
+              cntxt.lineWidth = $(this).val();
+              //core.toggleScripts();
+            });
+
+
+            //Undo Binding
+            $('#undo').live("click", function (e) {
+              e.preventDefault();
+              core.undoDraw()
+              core.toggleScripts();
+            });
+
+            //Init the brush and color
+            $('#colors li:first').click();
+            $('#brush_size').change();
+
+            $('#controls').live("click", function () {
+              core.toggleScripts();
+            });
+          },
+
+          toggleScripts: function () {
+            $('#colors').slideToggle(400);
+            $('#control-buttons').toggle(400);
+          }
+        };
+
+      $.extend(true, o, settings, options);
+
+      core.init();
+
+    };
+
+
+  })(jQuery);
+
+</script>
