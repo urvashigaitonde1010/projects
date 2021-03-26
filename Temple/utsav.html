@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Temple</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="all,follow" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- Font Awesome CSS -->
+    <link
+      rel="stylesheet"
+      href="vendor/font-awesome/css/font-awesome.min.css"
+    />
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google fonts - Roboto + Roboto Slab -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300"
+    />
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css" />
+    <link
+      rel="stylesheet"
+      href="vendor/owl.carousel/assets/owl.theme.default.css"
+    />
+    <!-- animate.css -->
+    <link rel="stylesheet" href="vendor/animate.css/animate.css" />
+    <!-- theme stylesheet -->
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet" />
+    <!-- Custom stylesheet - for your changes -->
+    <link href="css/full-slider.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <!-- Tweaks for older IEs -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script
+    ><![endif]-->
+      <style>
+body {
+  font-family: "Roboto Slab", serif;
+  margin: 10px;
+  overflow-y: scroll;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: "Roboto Slab", serif;
+  color: #666;
+  font-weight: 700;
+}
+
+h1, .h1 {
+  font-size: 36px;
+}
+
+h3, .h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+h4, .h4 {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.result {
+  max-width: 900px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-bottom: 80px;
+  margin-right: auto;
+}
+
+.accordion {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+}
+
+.accordion-item {
+  position: relative;
+}
+
+.accordion-toggle {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: 20px;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid #cdcdcd;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: inherit;
+  text-align: left;
+}
+.accordion-toggle:hover {
+  background-color: #f5f5f5;
+}
+.is-open > .accordion-toggle {
+  background-color: #666;
+  color: #ffffff;
+}
+
+.accordion-panel {
+  background-color: #ffffff;
+  border-bottom: 1px solid #cdcdcd;
+}
+.accordion-panel > *:last-child {
+  margin-bottom: 0;
+}
+.accordion-panel p {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.arrow {
+  position: absolute;
+  -webkit-transform: translate(-6px, 0);
+          transform: translate(-6px, 0);
+  margin-top: 26px;
+  right: 0;
+  padding-right: 20px;
+  cursor: pointer;
+}
+.arrow:before, .arrow:after {
+  content: "";
+  transition: all 0.25s ease-in-out;
+  position: absolute;
+  background-color: black;
+  width: 3px;
+  height: 9px;
+}
+
+.is-open > .arrow:before, .is-open > .arrow:after {
+  background-color: white;
+}
+.is-open > .arrow:before {
+  -webkit-transform: translate(-2px, 0) rotate(45deg);
+          transform: translate(-2px, 0) rotate(45deg);
+}
+
+.arrow:before {
+  -webkit-transform: translate(2px, 0) rotate(45deg);
+          transform: translate(2px, 0) rotate(45deg);
+}
+
+.is-open > .arrow:after {
+  -webkit-transform: translate(2px, 0) rotate(-45deg);
+          transform: translate(2px, 0) rotate(-45deg);
+}
+
+.arrow:after {
+  -webkit-transform: translate(-2px, 0) rotate(-45deg);
+          transform: translate(-2px, 0) rotate(-45deg);
+}
+
+
+      </style>
+
+  </head>
+  <body>
+    <!-- Reference item -->
+    <!-- navbar -->
+    
+    <!-- Intro Image -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Temple</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+           <ul class="navbar-nav ml-auto">
+              <li class="nav-item link-scroll">
+                <a class="nav-link link-scroll" href="index.html">Home
+                  
+                </a>
+              </li>
+              <li class="nav-item link-scroll">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item link-scroll">
+                <a class="nav-link" href="team.html">Our Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="how to donate.html">How to Donate</a>
+              </li>
+              <li class="nav-item link-scroll">
+                <a class="nav-link" href="tree.html">Tree
+                </a>
+              </li>
+              <li class="nav-item link-scroll active">
+                <a class="nav-link" href="utsav.html">Utsav
+                    <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item link-scroll">
+                <a class="nav-link" href="gallary.html">Gallary</a>
+              </li>
+		<li class="nav-item link-scroll">
+                <a class="nav-link" href="Prarthana.html">Prarthana</a>
+              </li>
+              <li class="nav-item link-scroll">
+                <a class="nav-link" href="index.html#inquiry">Inquiry</a>
+              </li>
+              <li class="nav-item link-scroll">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <section class="container" id="utsav" style="padding-top:65pt;font-family: 'Roboto Slab', serif;">
+        <h2 class="text-center" style="color:#222;text-decoration: underline"><b>Utsav List:</b></h4>
+          <div class="result">
+              <div class="accordion js-accordion">
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">January</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/JANUARY_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">February</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/FEBRUARY_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">March</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/MARCH_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">April</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/APRIL_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">May</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/MAY_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">June</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/JUNE_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">July</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/JULY_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">August</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/AUGUST_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">September</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/SEPTEMBER_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">October</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/OCTOBER_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">November</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/NOVEMBER_NEW.pdf"/>
+                      </div>
+                  </div>
+                  <div class="accordion-item">
+                      <i class="arrow"></i>
+                      <div class="accordion-toggle">December</div>
+                      <div class="accordion-panel">
+                          <embed id="embedPDF" type="application/pdf" width="100%" height="500px" src = "./utsav/DECEMBER_NEW.pdf"/>
+                      </div>
+                  </div>
+              </div>
+          </div> 
+      </section>
+      
+    <!-- JavaScript files -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper.js/umd/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"></script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
+    <script src="js/front.js"></script>
+    <script>
+          $(function() {
+        // Cache selectors
+        var $accordion = $(".js-accordion");
+        var $allPanels = $(" .accordion-panel").hide();
+        var $allItems = $(".accordion-item");
+
+        // Event listeners
+        $accordion.on("click", ".accordion-toggle", function() {
+            // Toggle the current accordion panel and close others
+            $allPanels.slideUp();
+            $allItems.removeClass("is-open");
+            if (
+                $(this)
+                    .next()
+                    .is(":visible")
+            ) {
+                $(".accordion-panel").slideUp();
+            } else {
+                $(this)
+                    .next()
+                    .slideDown()
+                    .closest(".accordion-item")
+                    .addClass("is-open");
+            }
+            return false;
+        });
+    });
+  
+    </script>
+  </body>
+</html>

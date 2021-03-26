@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gallary</title>
+	<meta name="description" content="Gamma Gallery - A Responsive Image Gallery Experiment" />
+	<meta name="keywords"
+		content="html5, responsive, image gallery, masonry, picture, images, sizes, fluid, history api, visibility api" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/gallary/style.css" />
+	<script src="js/gallary/modernizr.custom.70736.js"></script>
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+	<!-- Font Awesome CSS -->
+	<link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css" />
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Google fonts - Roboto + Roboto Slab -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700%7CRoboto:400,700,300" />
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css" />
+	<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css" />
+	<!-- animate.css -->
+	<link rel="stylesheet" href="vendor/animate.css/animate.css" />
+	<!-- theme stylesheet -->
+	<link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet" />
+	<!-- Custom stylesheet - for your changes -->
+	<link href="css/full-slider.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/custom.css" />
+	<!-- Favicon -->
+	<link rel="icon" href="favicon.ico" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+		integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<noscript>
+		<link rel="stylesheet" type="text/css" href="css/gallary/noJS.css" /></noscript>
+	<!--[if lte IE 7]><style>.main{display:none;} .support-note .note-ie{display:block;}</style><![endif]-->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		#li img {
+			-ms-transform: rotate(90deg);
+			/* IE 9 */
+			-webkit-transform: rotate(90deg);
+			/* Chrome, Safari, Opera */
+			transform: rotate(90deg);
+		}
+
+		/* Style the tab */
+		.tab {
+			overflow: hidden;
+			border: 1px solid #ccc;
+			background-color: #f1f1f1;
+		}
+
+		/* Style the buttons inside the tab */
+		.tab button {
+			background-color: inherit;
+			float: left;
+			border: none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+			font-size: 17px;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+			background-color: #ddd;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+			background-color: #ccc;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+			display: none;
+			padding: 6px 12px;
+			-webkit-animation: fadeEffect 1s;
+			animation: fadeEffect 1s;
+		}
+
+		.button {
+			background-color: #4CAF50;
+			/* Green */
+			border: none;
+			color: white;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button1 {
+			background-color: white;
+			color: black;
+			border: 2px solid black;
+		}
+
+		/* Fade in tabs */
+		@-webkit-keyframes fadeEffect {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeEffect {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="container">
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+			<div class="container">
+				<a class="navbar-brand" href="index.html">Temple</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+					aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item link-scroll">
+							<a class="nav-link link-scroll" href="index.html">Home
+							</a>
+						</li>
+						<li class="nav-item link-scroll">
+							<a class="nav-link" href="index.html#about">About</a>
+						</li>
+						<li class="nav-item link-scroll">
+							<a class="nav-link" href="team.html">Our Team</a>
+						</li>
+						<li class="nav-item link-scroll">
+							<a class="nav-link" href="how to donate.html">How to Donate</a>
+						</li>
+						<li class="nav-item link-scroll">
+							<a class="nav-link" href="tree.html">Tree</a>
+						</li>
+						<li class="nav-item link-scroll">
+							<a class="nav-link" href="utsav.html">Utsav
+							</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="gallary.html">Gallary
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item link-scroll">
+							<a class="nav-link" href="Prarthana.html">Prarthana</a>
+						</li>
+						<li class="nav-item link-scroll">
+							<a class="nav-link" href="index.html#inquiry">Inquiry</a>
+						</li>
+						<li class="nav-item link-scroll">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="tab" style="margin-top:120px;background: #fff">
+			<button class="tablinks" id="gallaryLink" style="width:50%"
+				onclick="openCity(event, 'gallary')">Gallary</button>
+			<button class="tablinks" style="width:50%" onclick="openCity(event, 'brochure')">Brochure</button>
+		</div>
+
+		<div id="brochure" class="tabcontent" style="margin-top:20px">
+
+			<!-- <button class="button button1" onclick="setPDF('1')" id="pdfButton1">January - March</button> -->
+			<button class="button button1" onclick="setPDF('2')" id="pdfButton2">April - June</button>
+			<button class="button button1" onclick="setPDF('3')" id="pdfButton3">July - Aug - Sep</button>
+			<button class="button button1" onclick="setPDF('4')" id="pdfButton4">Jan - March</button>
+			<embed id="embedPDF" type="application/pdf" width="100%" height="1000px" />
+		</div>
+
+		<div class="main" id="gallary">
+
+			<div class="gamma-container gamma-loading" id="gamma-container">
+
+				<ul class="gamma-gallery">
+
+					<li>
+
+						<div data-alt="img03" data-description="<h3>1</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/1.jpg" data-min-width="1300"></div>
+							<div data-src="img/1.jpg" data-min-width="1000"></div>
+							<div data-src="img/1.jpg" data-min-width="700"></div>
+							<div data-src="img/1.jpg" data-min-width="300"></div>
+							<div data-src="img/1.jpg" data-min-width="200"></div>
+							<div data-src="img/1.jpg" data-min-width="140"></div>
+							<div data-src="img/1.jpg"></div>
+
+							<noscript>
+								<img src="img/1.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>2</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/2.jpg" data-min-width="1300"></div>
+							<div data-src="img/2.jpg" data-min-width="1000"></div>
+							<div data-src="img/2.jpg" data-min-width="700"></div>
+							<div data-src="img/2.jpg" data-min-width="300"></div>
+							<div data-src="img/2.jpg" data-min-width="200"></div>
+							<div data-src="img/2.jpg" data-min-width="140"></div>
+							<div data-src="img/2.jpg"></div>
+							<noscript>
+								<img src="img/2.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>3</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/3.jpg" data-min-width="1300"></div>
+							<div data-src="img/3.jpg" data-min-width="1000"></div>
+							<div data-src="img/3.jpg" data-min-width="700"></div>
+							<div data-src="img/3.jpg" data-min-width="300"></div>
+							<div data-src="img/3.jpg" data-min-width="200"></div>
+							<div data-src="img/3.jpg" data-min-width="140"></div>
+							<div data-src="img/3.jpg"></div>
+							<noscript>
+								<img src="img/3.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>4</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/4.jpg" data-min-width="1300"></div>
+							<div data-src="img/4.jpg" data-min-width="1000"></div>
+							<div data-src="img/4.jpg" data-min-width="700"></div>
+							<div data-src="img/4.jpg" data-min-width="300"></div>
+							<div data-src="img/4.jpg" data-min-width="200"></div>
+							<div data-src="img/4.jpg" data-min-width="140"></div>
+							<div data-src="img/4.jpg"></div>
+							<noscript>
+								<img src="img/4.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>5</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/5.jpg" data-min-width="1300"></div>
+							<div data-src="img/5.jpg" data-min-width="1000"></div>
+							<div data-src="img/5.jpg" data-min-width="700"></div>
+							<div data-src="img/5.jpg" data-min-width="300"></div>
+							<div data-src="img/5.jpg" data-min-width="200"></div>
+							<div data-src="img/5.jpg" data-min-width="140"></div>
+							<div data-src="img/5.jpg"></div>
+							<noscript>
+								<img src="img/5.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>6</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/6.jpg" data-min-width="1300"></div>
+							<div data-src="img/6.jpg" data-min-width="1000"></div>
+							<div data-src="img/6.jpg" data-min-width="700"></div>
+							<div data-src="img/6.jpg" data-min-width="300"></div>
+							<div data-src="img/6.jpg" data-min-width="200"></div>
+							<div data-src="img/6.jpg" data-min-width="140"></div>
+							<div data-src="img/6.jpg"></div>
+							<noscript>
+								<img src="img/6.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>7</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/7.jpg" data-min-width="1300"></div>
+							<div data-src="img/7.jpg" data-min-width="1000"></div>
+							<div data-src="img/7.jpg" data-min-width="700"></div>
+							<div data-src="img/7.jpg" data-min-width="300"></div>
+							<div data-src="img/7.jpg" data-min-width="200"></div>
+							<div data-src="img/7.jpg" data-min-width="140"></div>
+							<div data-src="img/7.jpg"></div>
+							<noscript>
+								<img src="img/7.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>8</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/8.jpg" data-min-width="1300"></div>
+							<div data-src="img/8.jpg" data-min-width="1000"></div>
+							<div data-src="img/8.jpg" data-min-width="700"></div>
+							<div data-src="img/8.jpg" data-min-width="300"></div>
+							<div data-src="img/8.jpg" data-min-width="200"></div>
+							<div data-src="img/8.jpg" data-min-width="140"></div>
+							<div data-src="img/8.jpg"></div>
+							<noscript>
+								<img src="img/8.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>9</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/9.jpg" data-min-width="1300"></div>
+							<div data-src="img/9.jpg" data-min-width="1000"></div>
+							<div data-src="img/9.jpg" data-min-width="700"></div>
+							<div data-src="img/9.jpg" data-min-width="300"></div>
+							<div data-src="img/9.jpg" data-min-width="200"></div>
+							<div data-src="img/9.jpg" data-min-width="140"></div>
+							<div data-src="img/9.jpg"></div>
+							<noscript>
+								<img src="img/9.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>10</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/10.jpg" data-min-width="1300"></div>
+							<div data-src="img/10.jpg" data-min-width="1000"></div>
+							<div data-src="img/10.jpg" data-min-width="700"></div>
+							<div data-src="img/10.jpg" data-min-width="300"></div>
+							<div data-src="img/10.jpg" data-min-width="200"></div>
+							<div data-src="img/10.jpg" data-min-width="140"></div>
+							<div data-src="img/10.jpg"></div>
+							<noscript>
+								<img src="img/10.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>11</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/11.jpg" data-min-width="1300"></div>
+							<div data-src="img/11.jpg" data-min-width="1000"></div>
+							<div data-src="img/11.jpg" data-min-width="700"></div>
+							<div data-src="img/11.jpg" data-min-width="300"></div>
+							<div data-src="img/11.jpg" data-min-width="200"></div>
+							<div data-src="img/11.jpg" data-min-width="140"></div>
+							<div data-src="img/11.jpg"></div>
+							<noscript>
+								<img src="img/11.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>12</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/12.jpeg" data-min-width="1300"></div>
+							<div data-src="img/12.jpeg" data-min-width="1000"></div>
+							<div data-src="img/12.jpeg" data-min-width="700"></div>
+							<div data-src="img/12.jpeg" data-min-width="300"></div>
+							<div data-src="img/12.jpeg" data-min-width="200"></div>
+							<div data-src="img/12.jpeg" data-min-width="140"></div>
+							<div data-src="img/12.jpeg"></div>
+							<noscript>
+								<img src="img/12.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>13</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div data-src="img/13.jpeg" data-min-width="1300"></div>
+							<div data-src="img/13.jpeg" data-min-width="1000"></div>
+							<div data-src="img/13.jpeg" data-min-width="700"></div>
+							<div data-src="img/13.jpeg" data-min-width="300"></div>
+							<div data-src="img/13.jpeg" data-min-width="200"></div>
+							<div data-src="img/13.jpeg" data-min-width="140"></div>
+							<div data-src="img/13.jpeg"></div>
+							<noscript>
+								<img src="img/13.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>Image-1</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div class="img1" data-src="img/image1.jpeg" data-min-width="1300"></div>
+							<div class="img1" data-src="img/image1.jpeg" data-min-width="1000"></div>
+							<div class="img1" data-src="img/image1.jpeg" data-min-width="700"></div>
+							<div class="img1" data-src="img/image1.jpeg" data-min-width="300"></div>
+							<div class="img1" data-src="img/image1.jpeg" data-min-width="200"></div>
+							<div class="img1" data-src="img/image1.jpeg" data-min-width="140"></div>
+							<div class="img1" data-src="img/image1.jpeg"></div>
+							<noscript>
+								<img id="img1" src="img/image1.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>Image-2</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div class="img1" data-src="img/image2.jpeg" data-min-width="1300"></div>
+							<div class="img1" data-src="img/image2.jpeg" data-min-width="1000"></div>
+							<div class="img1" data-src="img/image2.jpeg" data-min-width="700"></div>
+							<div class="img1" data-src="img/image2.jpeg" data-min-width="300"></div>
+							<div class="img1" data-src="img/image2.jpeg" data-min-width="200"></div>
+							<div class="img1" data-src="img/image2.jpeg" data-min-width="140"></div>
+							<div class="img1" data-src="img/image2.jpeg"></div>
+							<noscript>
+								<img id="img1" src="img/image2.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>Image-3</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div class="img1" data-src="img/image3.jpeg" data-min-width="1300"></div>
+							<div class="img1" data-src="img/image3.jpeg" data-min-width="1000"></div>
+							<div class="img1" data-src="img/image3.jpeg" data-min-width="700"></div>
+							<div class="img1" data-src="img/image3.jpeg" data-min-width="300"></div>
+							<div class="img1" data-src="img/image3.jpeg" data-min-width="200"></div>
+							<div class="img1" data-src="img/image3.jpeg" data-min-width="140"></div>
+							<div class="img1" data-src="img/image3.jpeg"></div>
+							<noscript>
+								<img id="img1" src="img/image3.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>Image-4</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div class="img1" data-src="img/image4.jpeg" data-min-width="1300"></div>
+							<div class="img1" data-src="img/image4.jpeg" data-min-width="1000"></div>
+							<div class="img1" data-src="img/image4.jpeg" data-min-width="700"></div>
+							<div class="img1" data-src="img/image4.jpeg" data-min-width="300"></div>
+							<div class="img1" data-src="img/image4.jpeg" data-min-width="200"></div>
+							<div class="img1" data-src="img/image4.jpeg" data-min-width="140"></div>
+							<div class="img1" data-src="img/image4.jpeg"></div>
+							<noscript>
+								<img id="img1" src="img/image4.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>Image-5</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div class="img1" data-src="img/image5.jpeg" data-min-width="1300"></div>
+							<div class="img1" data-src="img/image5.jpeg" data-min-width="1000"></div>
+							<div class="img1" data-src="img/image5.jpeg" data-min-width="700"></div>
+							<div class="img1" data-src="img/image5.jpeg" data-min-width="300"></div>
+							<div class="img1" data-src="img/image5.jpeg" data-min-width="200"></div>
+							<div class="img1" data-src="img/image5.jpeg" data-min-width="140"></div>
+							<div class="img1" data-src="img/image5.jpeg"></div>
+							<noscript>
+								<img id="img1" src="img/image5.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>Image-6</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div class="img1" data-src="img/image6.jpeg" data-min-width="1300"></div>
+							<div class="img1" data-src="img/image6.jpeg" data-min-width="1000"></div>
+							<div class="img1" data-src="img/image6.jpeg" data-min-width="700"></div>
+							<div class="img1" data-src="img/image6.jpeg" data-min-width="300"></div>
+							<div class="img1" data-src="img/image6.jpeg" data-min-width="200"></div>
+							<div class="img1" data-src="img/image6.jpeg" data-min-width="140"></div>
+							<div class="img1" data-src="img/image6.jpeg"></div>
+							<noscript>
+								<img id="img1" src="img/image6.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<li>
+						<div data-alt="img03" data-description="<h3>Image-7</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div class="img1" data-src="img/image7.jpeg" data-min-width="1300"></div>
+							<div class="img1" data-src="img/image7.jpeg" data-min-width="1000"></div>
+							<div class="img1" data-src="img/image7.jpeg" data-min-width="700"></div>
+							<div class="img1" data-src="img/image7.jpeg" data-min-width="300"></div>
+							<div class="img1" data-src="img/image7.jpeg" data-min-width="200"></div>
+							<div class="img1" data-src="img/image7.jpeg" data-min-width="140"></div>
+							<div class="img1" data-src="img/image7.jpeg"></div>
+							<noscript>
+								<img id="img1" src="img/image7.jpeg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+<li>
+						<div data-alt="img03" data-description="<h3>Image-8</h3>" data-max-width="1800"
+							data-max-height="1350">
+							<div class="img1" data-src="img/image8.jpg" data-min-width="1300"></div>
+							<div class="img1" data-src="img/image8.jpg" data-min-width="1000"></div>
+							<div class="img1" data-src="img/image8.jpg" data-min-width="700"></div>
+							<div class="img1" data-src="img/image8.jpg" data-min-width="300"></div>
+							<div class="img1" data-src="img/image8.jpg" data-min-width="200"></div>
+							<div class="img1" data-src="img/image8.jpg" data-min-width="140"></div>
+							<div class="img1" data-src="img/image8.jpg"></div>
+							<noscript>
+								<img id="img1" src="img/image8.jpg" alt="img03" />
+							</noscript>
+						</div>
+					</li>
+					<!--<li>
+							<div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="img/1.jpg" data-min-width="1300"></div>
+								<div data-src="img/1.jpg" data-min-width="1000"></div>
+								<div data-src="img/1.jpg" data-min-width="700"></div>
+								<div data-src="img/1.jpg" data-min-width="300"></div>
+								<div data-src="img/1.jpg" data-min-width="200"></div>
+								<div data-src="img/1.jpg" data-min-width="140"></div>
+								<div data-src="img/1.jpg"></div>
+								<noscript>
+									<img src="img/1.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="img/1.jpg" data-min-width="1300"></div>
+								<div data-src="img/1.jpg" data-min-width="1000"></div>
+								<div data-src="img/1.jpg" data-min-width="700"></div>
+								<div data-src="img/1.jpg" data-min-width="300"></div>
+								<div data-src="img/1.jpg" data-min-width="200"></div>
+								<div data-src="img/1.jpg" data-min-width="140"></div>
+								<div data-src="img/1.jpg"></div>
+								<noscript>
+									<img src="img/1.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="img/1.jpg" data-min-width="1300"></div>
+								<div data-src="img/1.jpg" data-min-width="1000"></div>
+								<div data-src="img/1.jpg" data-min-width="700"></div>
+								<div data-src="img/1.jpg" data-min-width="300"></div>
+								<div data-src="img/1.jpg" data-min-width="200"></div>
+								<div data-src="img/1.jpg" data-min-width="140"></div>
+								<div data-src="img/1.jpg"></div>
+								<noscript>
+									<img src="img/1.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="img/1.jpg" data-min-width="1300"></div>
+								<div data-src="img/1.jpg" data-min-width="1000"></div>
+								<div data-src="img/1.jpg" data-min-width="700"></div>
+								<div data-src="img/1.jpg" data-min-width="300"></div>
+								<div data-src="img/1.jpg" data-min-width="200"></div>
+								<div data-src="img/1.jpg" data-min-width="140"></div>
+								<div data-src="img/1.jpg"></div>
+								<noscript>
+									<img src="img/1.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="img/1.jpg" data-min-width="1300"></div>
+								<div data-src="img/1.jpg" data-min-width="1000"></div>
+								<div data-src="img/1.jpg" data-min-width="700"></div>
+								<div data-src="img/1.jpg" data-min-width="300"></div>
+								<div data-src="img/1.jpg" data-min-width="200"></div>
+								<div data-src="img/1.jpg" data-min-width="140"></div>
+								<div data-src="img/1.jpg"></div>
+								<noscript>
+									<img src="img/1.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="img/1.jpg" data-min-width="1300"></div>
+								<div data-src="img/1.jpg" data-min-width="1000"></div>
+								<div data-src="img/1.jpg" data-min-width="700"></div>
+								<div data-src="img/1.jpg" data-min-width="300"></div>
+								<div data-src="img/1.jpg" data-min-width="200"></div>
+								<div data-src="img/1.jpg" data-min-width="140"></div>
+								<div data-src="img/1.jpg"></div>
+								<noscript>
+									<img src="img/1.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="img/1.jpg" data-min-width="1300"></div>
+								<div data-src="img/1.jpg" data-min-width="1000"></div>
+								<div data-src="img/1.jpg" data-min-width="700"></div>
+								<div data-src="img/1.jpg" data-min-width="300"></div>
+								<div data-src="img/1.jpg" data-min-width="200"></div>
+								<div data-src="img/1.jpg" data-min-width="140"></div>
+								<div data-src="img/1.jpg"></div>
+								<noscript>
+									<img src="img/1.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li>
+						<li>
+							<div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350">
+								<div data-src="img/1.jpg" data-min-width="1300"></div>
+								<div data-src="img/1.jpg" data-min-width="1000"></div>
+								<div data-src="img/1.jpg" data-min-width="700"></div>
+								<div data-src="img/1.jpg" data-min-width="300"></div>
+								<div data-src="img/1.jpg" data-min-width="200"></div>
+								<div data-src="img/1.jpg" data-min-width="140"></div>
+								<div data-src="img/1.jpg"></div>
+								<noscript>
+									<img src="img/1.jpg" alt="img03"/>
+								</noscript>
+							</div>
+						</li> -->
+				</ul>
+
+				<div class="gamma-overlay"></div>
+
+				<div id="loadmore" class="loadmore">Example for loading more items...</div>
+
+			</div>
+
+		</div>
+		<!--/main-->
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="js/gallary/jquery.masonry.min.js"></script>
+	<script src="js/gallary/jquery.history.js"></script>
+	<script src="js/gallary/js-url.min.js"></script>
+	<script src="js/gallary/jquerypp.custom.js"></script>
+	<script src="js/gallary/gamma.js"></script>
+	<script type="text/javascript">
+
+		$(function () {
+
+			var GammaSettings = {
+				// order is important!
+				viewport: [{
+					width: 1200,
+					columns: 5
+				}, {
+					width: 900,
+					columns: 4
+				}, {
+					width: 500,
+					columns: 3
+				}, {
+					width: 320,
+					columns: 2
+				}, {
+					width: 0,
+					columns: 2
+				}]
+			};
+
+			Gamma.init(GammaSettings, fncallback);
+
+
+			// Example how to add more items (just a dummy):
+
+			var page = 0,
+				items = ['<li><div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350"><div data-src="img/1.jpg" data-min-width="1300"></div><div data-src="img/1.jpg" data-min-width="1000"></div><div data-src="img/1.jpg" data-min-width="700"></div><div data-src="img/1.jpg" data-min-width="300"></div><div data-src="img/1.jpg" data-min-width="200"></div><div data-src="img/1.jpg" data-min-width="140"></div><div data-src="img/1.jpg"></div><noscript><img src="img/1.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350"><div data-src="img/1.jpg" data-min-width="1300"></div><div data-src="img/1.jpg" data-min-width="1000"></div><div data-src="img/1.jpg" data-min-width="700"></div><div data-src="img/1.jpg" data-min-width="300"></div><div data-src="img/1.jpg" data-min-width="200"></div><div data-src="img/1.jpg" data-min-width="140"></div><div data-src="img/1.jpg"></div><noscript><img src="img/1.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350"><div data-src="img/1.jpg" data-min-width="1300"></div><div data-src="img/1.jpg" data-min-width="1000"></div><div data-src="img/1.jpg" data-min-width="700"></div><div data-src="img/1.jpg" data-min-width="300"></div><div data-src="img/1.jpg" data-min-width="200"></div><div data-src="img/1.jpg" data-min-width="140"></div><div data-src="img/1.jpg"></div><noscript><img src="img/1.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350"><div data-src="img/1.jpg" data-min-width="1300"></div><div data-src="img/1.jpg" data-min-width="1000"></div><div data-src="img/1.jpg" data-min-width="700"></div><div data-src="img/1.jpg" data-min-width="300"></div><div data-src="img/1.jpg" data-min-width="200"></div><div data-src="img/1.jpg" data-min-width="140"></div><div data-src="img/1.jpg"></div><noscript><img src="img/1.jpg" alt="img03"/></noscript></div></li><li><div data-alt="img03" data-description="<h3>Temp Caption</h3>" data-max-width="1800" data-max-height="1350"><div data-src="img/1.jpg" data-min-width="1300"></div><div data-src="img/1.jpg" data-min-width="1000"></div><div data-src="img/1.jpg" data-min-width="700"></div><div data-src="img/1.jpg" data-min-width="300"></div><div data-src="img/1.jpg" data-min-width="200"></div><div data-src="img/1.jpg" data-min-width="140"></div><div data-src="img/1.jpg"></div><noscript><img src="img/1.jpg" alt="img03"/></noscript></div></li>']
+
+			function fncallback() {
+
+				$('#loadmore').show().on('click', function () {
+
+					++page;
+					var newitems = items[page - 1]
+					if (page <= 1) {
+
+						Gamma.add($(newitems));
+
+					}
+					if (page === 1) {
+
+						$(this).remove();
+
+					}
+
+				});
+
+			}
+
+		});
+
+	</script>
+	<script>
+		function openCity(evt, cityName) {
+			if (cityName == "brochure") {
+				document.getElementById("gallary").style.display = "none";
+			}
+			var i, tabcontent, tablinks;
+			tabcontent = document.getElementsByClassName("tabcontent");
+			for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			}
+			tablinks = document.getElementsByClassName("tablinks");
+			for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			}
+			document.getElementById(cityName).style.display = "block";
+			evt.currentTarget.className += " active";
+		}
+	</script>
+	<script>
+		document.getElementById("gallaryLink").click();
+		document.getElementById("pdfButton2").click();
+		function setPDF(flag) {
+			if (flag == '1') {
+				document.getElementById("embedPDF").src = "./img/Jan Feb March 2019 PDF.pdf";
+				document.getElementById("pdfButton1").style.background = "#555";
+				document.getElementById("pdfButton1").style.color = "white";
+				document.getElementById("pdfButton2").style.background = "white";
+				document.getElementById("pdfButton2").style.color = "black";
+			}
+			else if (flag == '3') {
+				document.getElementById("embedPDF").src = "./img/July-Aug-Sep.pdf";
+				document.getElementById("pdfButton3").style.background = "#555";
+				document.getElementById("pdfButton3").style.color = "white";
+				document.getElementById("pdfButton2").style.background = "white";
+				document.getElementById("pdfButton2").style.color = "black";
+				document.getElementById("pdfButton4").style.background = "white";
+				document.getElementById("pdfButton4").style.color = "black";
+			}
+			else if (flag == '4') {
+				document.getElementById("embedPDF").src = "./img/Jan-March_2020.pdf";
+				document.getElementById("pdfButton4").style.background = "#555";
+				document.getElementById("pdfButton4").style.color = "white";
+				document.getElementById("pdfButton3").style.background = "white";
+				document.getElementById("pdfButton3").style.color = "black";
+				document.getElementById("pdfButton2").style.background = "white";
+				document.getElementById("pdfButton2").style.color = "black";
+			}
+			else {
+				document.getElementById("embedPDF").src = "./img/April-June.pdf";
+				document.getElementById("pdfButton2").style.background = "#555";
+				document.getElementById("pdfButton2").style.color = "white";
+				document.getElementById("pdfButton3").style.background = "white";
+				document.getElementById("pdfButton3").style.color = "black";
+				document.getElementById("pdfButton4").style.background = "white";
+				document.getElementById("pdfButton4").style.color = "black";
+			}
+		}
+	</script>
+</body>
+
+</html>
